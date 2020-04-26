@@ -4,11 +4,12 @@
 	margin:0px;
 }
 body {
-	background:#FAD7A0 ;
+	background:white;
 	margin-left:auto;
 	margin-right:auto;
 }
 #main{
+
 	margin-top:100px;
 	margin-bottom:5px;
 	padding-bottom:5px;
@@ -22,25 +23,9 @@ header{
 	text-align:left;
 	color:#E59866 ;
 }
-
-#tangulo{
-	margin-left:50px;
-}
-
 #imagen1{
 	float: right;
 	width:75px;
-}
-#canvas{
-	margin-left:auto; 
-	margin-right: 50px; 
-	display: block; 
-	width: 300px;
-	height:300px;
-	background:#FEF5E7;
-}
-#ecuaciones{
-	margin-left:10px;
 }
 footer{
 	height:20px;
@@ -50,24 +35,6 @@ footer{
 	background:#DC7633;
 	text-align:center;
 }
-#funciones{
-	margin-top:125px;
-	text-align:right;
-	margin-right:125px;
-}
-#resultados{
-	margin-top:-170px;
-	text-align:right;
-	margin-right:400px;
-}
-
-.texto{
-	width:50px;
-	font-size:22px;
-}
-.funcion{
-	font-size:22px;
-}
 .link{
 	margin-left:10px;
 	color:#808B96;
@@ -75,10 +42,32 @@ footer{
 	font-family: 'Source Code Pro', monospace;
 	font-size:20px;
 }
-#inicio{
+#teoria{
 	color:#2C3E50;
 	text-decoration:underline;
 }
-
+#circulo{
+	margin-top:-50px;
+	float:left;
+	width:300px;
+	margin-right:50px;
+}
+#inicioi{
+	text-decoration:none;
+	color:#E59866;
+}
+#subtitulo{
+	font-family: 'Mukta', sans-serif;
+	margin-top:-50px;
+	margin-bottom:50px;
+	text-align:center;
+	font-size:18px;
+}
+#tangente{
+	float:left;
+	margin-left:30px;
+	margin-right:50px;
+	
+}
 
 

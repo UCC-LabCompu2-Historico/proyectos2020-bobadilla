@@ -4,7 +4,7 @@
 	margin:0px;
 }
 body {
-	background:#FAD7A0 ;
+	background:white;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -22,25 +22,13 @@ header{
 	text-align:left;
 	color:#E59866 ;
 }
-
-#tangulo{
-	margin-left:50px;
-}
-
 #imagen1{
 	float: right;
 	width:75px;
 }
-#canvas{
-	margin-left:auto; 
-	margin-right: 50px; 
-	display: block; 
-	width: 300px;
-	height:300px;
-	background:#FEF5E7;
-}
-#ecuaciones{
-	margin-left:10px;
+#triangulo{
+	width:300px;
+	margin-left:20px;
 }
 footer{
 	height:20px;
@@ -50,24 +38,6 @@ footer{
 	background:#DC7633;
 	text-align:center;
 }
-#funciones{
-	margin-top:125px;
-	text-align:right;
-	margin-right:125px;
-}
-#resultados{
-	margin-top:-170px;
-	text-align:right;
-	margin-right:400px;
-}
-
-.texto{
-	width:50px;
-	font-size:22px;
-}
-.funcion{
-	font-size:22px;
-}
 .link{
 	margin-left:10px;
 	color:#808B96;
@@ -75,10 +45,31 @@ footer{
 	font-family: 'Source Code Pro', monospace;
 	font-size:20px;
 }
-#inicio{
+#ecuaciones{
 	color:#2C3E50;
 	text-decoration:underline;
 }
-
-
-
+#funciones{
+	margin-top:-150px;
+	margin-left:350px;
+	font-size:22px;
+}
+#funciont{
+	margin-left:600px;
+	font-size:22px;
+}
+#funcion{
+	font-size:22px;
+}
+.caja{
+	width:40px;
+}
+#calculos{
+	margin-left:400px;
+	margin-top:-78px;
+}
+#angulosnotables{
+	height:200px;
+	margin-top:140px;
+	margin-left:100px;
+}
