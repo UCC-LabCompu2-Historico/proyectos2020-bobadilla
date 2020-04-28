@@ -65,11 +65,15 @@ footer{
 	width:40px;
 }
 #calculos{
-	margin-left:400px;
+
+	float:right;
+	width:50%;
 	margin-top:-78px;
 }
 #angulosnotables{
+	float:right;
+	width:50;
 	height:200px;
 	margin-top:140px;
-	margin-left:100px;
+	margin-right:40%;
 }
