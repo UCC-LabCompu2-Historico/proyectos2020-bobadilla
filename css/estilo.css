@@ -9,7 +9,7 @@ body {
 	margin-right:auto;
 }
 #main{
-	margin-top:100px;
+	margin-top:50px;
 	margin-bottom:5px;
 	padding-bottom:5px;
 }
@@ -35,8 +35,8 @@ header{
 	margin-left:auto; 
 	margin-right: 50px; 
 	display: block; 
-	width: 300px;
-	height:300px;
+	width: 400px;
+	height:400px;
 	background:#FEF5E7;
 }
 #ecuaciones{
@@ -51,14 +51,14 @@ footer{
 	text-align:center;
 }
 #funciones{
-	margin-top:125px;
+	margin-top:135px;
 	text-align:right;
-	margin-right:125px;
+	margin-right:150px;
 }
 #resultados{
-	margin-top:-170px;
+	margin-top:-220px;
 	text-align:right;
-	margin-right:400px;
+	margin-right:500px;
 }
 
 .texto{
