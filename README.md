@@ -1,15 +1,16 @@
 # Calculo Identidades Trigonometricas
 
 ## Proyecto:
--KUKΛO
+- KUKΛO
 
 ## Autor:
--Manuel Bobadilla
+- Manuel Bobadilla
 
 ## Contenido: 
--Caulculo de funciones trigonometricas
+- Calculo de funciones trigonometricas
 
 ## Tegconogia: 
--HTML -CSS
+- HTML 
+- CSS
 
 proyectos2020-bobadilla created by GitHub Classroom
