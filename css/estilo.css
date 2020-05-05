@@ -1,28 +1,4 @@
 
-*{
-	padding:0px;
-	margin:0px;
-}
-body {
-	background:#FAD7A0 ;
-	margin-left:auto;
-	margin-right:auto;
-}
-#main{
-	margin-top:50px;
-	margin-bottom:5px;
-	padding-bottom:5px;
-}
-header{
-	height:75px;
-	background: #F5CBA7 ;
-}
-.titulo{
-	font-size:50px;
-	text-align:left;
-	color:#E59866 ;
-}
-
 #tangulo{
 	margin-left:50px;
 }
@@ -42,14 +18,7 @@ header{
 #ecuaciones{
 	margin-left:10px;
 }
-footer{
-	height:20px;
-	width:100%;
-	bottom:0px;
-	position: fixed;
-	background:#DC7633;
-	text-align:center;
-}
+
 #funciones{
 	margin-top:135px;
 	text-align:right;
@@ -68,13 +37,7 @@ footer{
 .funcion{
 	font-size:22px;
 }
-.link{
-	margin-left:10px;
-	color:#808B96;
-	text-decoration:none;
-	font-family: 'Source Code Pro', monospace;
-	font-size:20px;
-}
+
 #inicio{
 	color:#2C3E50;
 	text-decoration:underline;
