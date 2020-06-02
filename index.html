@@ -9,8 +9,9 @@
 		<link rel="stylesheet" href="css/estilo.css">
 		<link rel="shortcut icon" href="imagenes/icono.png">
 		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="Funciones.js"></script>
 	</head>
-	<body>
+	<body onload="Cuadricula()">
 		<div id="contenedor">
 			<header>
 				<img id="imagen1" src="imagenes/triangulo.png">
@@ -20,19 +21,19 @@
 			</header>
 			<div id="main">
 				<section>
-					<p><label for="angulo" id="tangulo" class="texto">Ingrese el valor del angulo: </label><input class="texto" type="number" id="angulo"></p>
+					<p><label for="angulo" id="tangulo" class="texto">Ingrese el valor del angulo: </label><input class="texto" type="number" id="angulo" onchange="CalculoIndex()" onchange="Dibujar()"></p>
 					<p>
-						<canvas id="canvas">tu navegador no puede mostrar este contenido</canvas>
+						<canvas id="canvas" width="400px" height="400px">tu navegador no puede mostrar este contenido</canvas>
 						<div id="resultados">
-							<p><label for="rsen" class="texto">Sen: </label><input class="texto" type="number" id="rsen"></p>
-							<p><label for="rcos" class="texto">Cos: </label><input class="texto" type="number" id="rcos"></p>
-							<p><label for="rtan" class="texto">Tan: </label><input class="texto" type="number" id="rtan"></p>
+							<p><label for="rsen" class="texto">Sen: </label><input class="texto" id="rsen" readonly></p>
+							<p><label for="rcos" class="texto">Cos: </label><input class="texto" id="rcos" readonly></p>
+							<p><label for="rtan" class="texto">Tan: </label><input class="texto" id="rtan" readonly></p>
 						</div>
 					</p>
 					<div id="funciones">
-						<p><label class="funcion" for="sen">Sen</label><input type="checkbox" id="sen" value="sen" name="funcion">
-							/ <label class="funcion" for="cos">Cos</label><input type="checkbox" value="cos" id="cos" name="funcion">
-							/ <label class="funcion" for="tan">Tan</label><input type="checkbox" value="tan" id="tan" name="funcion">
+						<p><label class="funcion" for="sen">Sen</label><input type="checkbox" id="sen" checked="hola" value="sen" name="funcion">
+							/ <label class="funcion" for="cos">Cos</label><input type="checkbox" value="cos" id="cos" checked="" name="funcion">
+							/ <label class="funcion" for="tan">Tan</label><input type="checkbox" value="tan" id="tan" checked="" name="funcion">
 						</p>
 					</div>
 				</section>

@@ -11,8 +11,6 @@
 	margin-left:auto; 
 	margin-right: 50px; 
 	display: block; 
-	width:400px;
-	height:400px;
 	background:#FEF5E7;
 }
 #ecuaciones{
@@ -31,7 +29,7 @@
 }
 
 .texto{
-	width:50px;
+	width:65px;
 	font-size:22px;
 }
 .funcion{
