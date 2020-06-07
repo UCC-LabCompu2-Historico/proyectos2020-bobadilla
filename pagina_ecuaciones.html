@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="css/estiloecuaciones.css">
 		<link rel="shortcut icon" href="imagenes/icono.png">
 		<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,300&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="Funciones.js"></script>
 	</head>
 	<body>
 		<div id="contenedor">
@@ -26,9 +27,9 @@
 						<p>Cosβ=a/b</p>
 						<p>Tanβ=c/a</p>
 						<div id="calculos">
-							<p>Senβ=<input class="caja" type="number" id="cosen" placeholder="CO"> / <input class="caja" type="number" id="hipsen" placeholder="HIP"> = <input class="caja" type="number" id="ressen"></p>
-							<p>Cosβ=<input class="caja" type="number" id="cacos" placeholder="CA"> / <input class="caja" type="number" id="hipcos" placeholder="HIP"> = <input class="caja" type="number" id="rescos"></p>
-							<p>Tanβ=<input class="caja" type="number" id="cotan" placeholder="CO"> / <input class="caja" type="number" id="catan" placeholder="CA"> = <input class="caja" type="number" id="restan"></p>
+							<p>Senβ=<input class="caja" type="number" id="cosen" placeholder="CO" onchange="calcseno()"> / <input class="caja" type="number" id="hipsen" placeholder="HIP" onchange="calcseno()"> = <input class="caja" type="text" id="ressen" readonly></p>
+							<p>Cosβ=<input class="caja" type="number" id="cacos" placeholder="CA" onchange="calccoseno()"> / <input class="caja" type="number" id="hipcos" placeholder="HIP" onchange="calccoseno()"> = <input class="caja" type="text" id="rescos" readonly></p>
+							<p>Tanβ=<input class="caja" type="number" id="cotan" placeholder="CO" onchange="calctangente()"> / <input class="caja" type="number" id="catan" placeholder="CA" onchange="calctangente()"> = <input class="caja" type="text" id="restan" readonly></p>
 						</div>
 						<img id="angulosnotables" src="imagenes/angulosnotables.jpg">
 					</div>
