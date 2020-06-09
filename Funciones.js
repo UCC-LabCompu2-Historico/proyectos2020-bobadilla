@@ -12,11 +12,11 @@ function CalculoIndex(){
 	tangente=Math.round(tangente*1000)/1000;
 	document.getElementById("rsen").value=seno;
 	document.getElementById("rcos").value=coseno;
-	if(seno2==1){
+	if(seno2==1||seno2==-1){
 		var tangente2="Ind";
 		document.getElementById("rtan").value=tangente2;
 	}
-	if(seno2!=1){
+	if(seno2!=1&&seno2!=-1){
 		document.getElementById("rtan").value=tangente;
 	}
 	
