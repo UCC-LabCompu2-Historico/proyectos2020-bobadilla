@@ -1,24 +1,43 @@
+/**
+   * {Pagina index}Calculo y graficacion de las funciones
+   * @method CalculoIndex()
+   */
+
 function CalculoIndex(){
 	
 	var angulo;
 	angulo=document.getElementById("angulo").value;
-	var angulorad=(angulo*Math.PI)/180;
-	var seno =Math.sin(angulorad);
-	var coseno =Math.cos(angulorad);
-	var tangente =Math.tan(angulorad);
-	var seno2=seno;//copia del valor de seno sin redondear, se utilizara para determinar cuando es posible calcular la tangente
-	coseno=Math.round(coseno*1000)/1000;
-	seno=Math.round(seno*1000)/1000;
-	tangente=Math.round(tangente*1000)/1000;
-	document.getElementById("rsen").value=seno;
-	document.getElementById("rcos").value=coseno;
-	if(seno2==1||seno2==-1){
-		var tangente2="Ind";
-		document.getElementById("rtan").value=tangente2;
+	
+	if(isNaN(angulo)){
+		alert("Se Ingreso un Valor Invalido");
+		angulo="";
+		document.getElementById("angulo").value="";
 	}
-	if(seno2!=1&&seno2!=-1){
-		document.getElementById("rtan").value=tangente;
+	
+	else{
+		var angulorad=(angulo*Math.PI)/180;
+		var seno =Math.sin(angulorad);
+		var coseno =Math.cos(angulorad);
+		var tangente =Math.tan(angulorad);
+		var seno2=seno;//copia del valor de seno sin redondear, se utilizara para determinar cuando es posible calcular la tangente
+		
+		coseno=Math.round(coseno*1000)/1000;
+		seno=Math.round(seno*1000)/1000;
+		tangente=Math.round(tangente*1000)/1000;
+		
+		document.getElementById("rsen").value=seno;
+		document.getElementById("rcos").value=coseno;
+		
+		if(seno2==1||seno2==-1){
+			var tangente2="Ind";
+			document.getElementById("rtan").value=tangente2;
+		}
+		
+		if(seno2!=1&&seno2!=-1){
+			document.getElementById("rtan").value=tangente;
+		}
 	}
+	
 	
 	var canvas=document.getElementById("canvas");
 	var ctx=canvas.getContext("2d");
@@ -89,6 +108,12 @@ function CalculoIndex(){
 	ctx.closePath();
 }
 
+
+/**
+   * {Pagina Index}Generacion del canvas al iniciar la pagina
+   * @method Cuadricula
+   */
+   
 function Cuadricula(){
 	var canvas=document.getElementById("canvas");
 	var ctx=canvas.getContext("2d");
@@ -118,6 +143,12 @@ function Cuadricula(){
 	ctx.closePath();
 }
 
+
+/**
+   * {Pagina ecuaciones}Calculo del seno dado los lados correspondientes del triangulo
+   * @method calcseno
+   */
+   
 function calcseno(){
 	var cosen;
 	var hipsen;
@@ -128,11 +159,18 @@ function calcseno(){
 		document.getElementById("ressen").value=imp;//no se imprime nada en pantalla
 	}
 	else{
-		document.getElementById("ressen").value=cosen/hipsen;
+		seno=cosen/hipsen;
+		seno=Math.round(seno*10000)/10000;
+		document.getElementById("ressen").value=seno;
 	}
-	
 }
 
+
+/**
+   * {Pagina ecuaciones}Calculo del coseno dado los lados correspondientes del triangulo
+   * @method calccoseno
+   */
+   
 function calccoseno(){
 	var cacos;
 	var hipcos;
@@ -143,10 +181,18 @@ function calccoseno(){
 		document.getElementById("rescos").value=imp;//no se imprime nada en pantalla
 	}
 	else{
-		document.getElementById("rescos").value=cacos/hipcos;
+		coseno=cacos/hipcos;
+		coseno=Math.round(coseno*10000)/10000;
+		document.getElementById("rescos").value=coseno;
 	}
 	
 }
+
+
+/**
+   * {Pagina ecuaciones}Calculo de la tangente dado los lados correspondientes del triangulo
+   * @method calctangente
+   */
 
 function calctangente(){
 	var cotan;
@@ -158,7 +204,9 @@ function calctangente(){
 		document.getElementById("restan").value=imp;//no se imprime nada en pantalla
 	}
 	else{
-		document.getElementById("restan").value=cotan/catan;
+		tangente=cotan/catan;
+		tangente=Math.round(tangente*10000)/10000;
+		document.getElementById("restan").value=tangente;
 	}
 	
 }

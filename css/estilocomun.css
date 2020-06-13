@@ -3,29 +3,35 @@
 	padding:0px;
 	margin:0px;
 }
-body {
+
+#bodyindex {
 	background:#FAD7A0 ;
 	margin-left:auto;
 	margin-right:auto;
 }
+
 #main{
-	margin-top:50px;
+	margin-top:75px;
 	margin-bottom:5px;
 	padding-bottom:5px;
 }
+
 header{
 	height:75px;
 	background: #F5CBA7 ;
 }
+
 .titulo{
 	font-size:50px;
 	text-align:left;
 	color:#E59866 ;
 }
+
 #imagen1{
 	float: right;
 	width:75px;
 }
+
 footer{
 	height:20px;
 	width:100%;
@@ -34,6 +40,7 @@ footer{
 	background:#DC7633;
 	text-align:center;
 }
+
 .link{
 	margin-left:10px;
 	color:#808B96;
@@ -43,4 +50,153 @@ footer{
 }
 
 
+/*index*/
 
+
+#tangulo{
+	margin-left:50px;
+}
+
+#canvas{
+	margin-left:auto; 
+	margin-right: 50px; 
+	display: block; 
+	background:#FEF5E7;
+}
+
+#ecuaciones{
+	margin-left:10px;
+}
+
+#funcionesindex{
+	margin-top:135px;
+	text-align:right;
+	margin-right:150px;
+}
+
+#resultados{
+	margin-top:-220px;
+	text-align:right;
+	margin-right:500px;
+}
+
+.texto{
+	width:65px;
+	font-size:22px;
+}
+
+.funcion{
+	font-size:22px;
+}
+
+#inicioindex{
+	color:#2C3E50;
+	text-decoration:underline;
+}
+
+
+/*ecuaciones*/
+
+
+.bodyblanco {
+	background:white;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#triangulo{
+	width:300px;
+	margin-left:20px;
+}
+
+#ecuacionesecuaciones{
+	color:#2C3E50;
+	text-decoration:underline;
+}
+
+#funcionesecuaciones{
+	margin-top:-150px;
+	margin-left:350px;
+	font-size:22px;
+}
+
+#funciont{
+	margin-left:600px;
+	font-size:22px;
+}
+
+#funcion{
+	font-size:22px;
+}
+
+.caja{
+	width:55px;
+	height:20px;
+}
+
+#calculos{
+
+	float:right;
+	width:50%;
+	margin-top:-78px;
+}
+
+#angulosnotables{
+	float:right;
+	width:50%;
+	height:200px;
+	margin-top:165px;
+	margin-right:40%;
+}
+
+/*teoria*/
+
+#teoriateoria{
+	color:#2C3E50;
+	text-decoration:underline;
+}
+
+#circulo{
+	margin-top:-50px;
+	float:left;
+	width:300px;
+	margin-right:50px;
+	width:22%;
+}
+
+#subtitulo{
+	font-family: 'Mukta', sans-serif;
+	margin-top:-50px;
+	margin-bottom:50px;
+	text-align:center;
+	font-size:19px;
+}
+
+#tangente{
+	float:left;
+	margin-left:30px;
+	margin-right:50px;
+	width:20%;
+	margin-top:1%
+}
+
+.parrafo{
+	margin-top:5px;
+	text-align:justify;
+	float:right;
+	width:73%;
+	font-size:16px;
+	margin-right:1%;
+}
+
+.linki{
+	text-decoration:none;
+	color:#E59866;
+}
+
+.subtitulos{
+	text-decoration:underline;
+	text-align:center;
+	font-size:18px;
+	font-family: 'Mukta', sans-serif;
+}
