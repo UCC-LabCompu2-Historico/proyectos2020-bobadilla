@@ -12,5 +12,6 @@
 ## Tegconogia: 
 - HTML 
 - CSS
+- JavaScript
 
 proyectos2020-bobadilla created by GitHub Classroom

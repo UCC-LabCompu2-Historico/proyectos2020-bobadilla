@@ -36,76 +36,77 @@ function CalculoIndex(){
 		if(seno2!=1&&seno2!=-1){
 			document.getElementById("rtan").value=tangente;
 		}
-	}
 	
 	
-	var canvas=document.getElementById("canvas");
-	var ctx=canvas.getContext("2d");
-	var alturaMax=canvas.height;
-	var anchoMax=canvas.width;
 	
-	canvas.width=canvas.width;
-	
-	ctx.beginPath();
-	ctx.moveTo(0,alturaMax/2);
-	ctx.lineTo(anchoMax,alturaMax/2);
-	ctx.strokeStyle="#000";
-	ctx.stroke();
-	ctx.closePath();
-	
-	ctx.beginPath();
-	ctx.moveTo(anchoMax/2,0);
-	ctx.lineTo(anchoMax/2,alturaMax);
-	ctx.strokeStyle="#000";
-	ctx.stroke();
-	ctx.closePath();
-	
-	ctx.beginPath();
-	ctx.moveTo(anchoMax/2+150,alturaMax/2);
-	ctx.arc(alturaMax/2,anchoMax/2,150,0,2*Math.PI);
-	ctx.strokeStyle="#568";
-	ctx.stroke();
-	ctx.stroke();
-	ctx.closePath();
-	
-	if(document.getElementById("tan").checked){
-		ctx.beginPath();//tangente
-		ctx.moveTo(anchoMax/2,alturaMax/2);
-		ctx.lineTo(anchoMax/2+150,alturaMax/2-tangente*150);
-		ctx.lineTo(anchoMax/2+150,alturaMax/2);
-		ctx.strokeStyle="blue";
+		var canvas=document.getElementById("canvas");
+		var ctx=canvas.getContext("2d");
+		var alturaMax=canvas.height;
+		var anchoMax=canvas.width;
+		
+		canvas.width=canvas.width;
+		
+		ctx.beginPath();
+		ctx.moveTo(0,alturaMax/2);
+		ctx.lineTo(anchoMax,alturaMax/2);
+		ctx.strokeStyle="#000";
+		ctx.stroke();
+		ctx.closePath();
+		
+		ctx.beginPath();
+		ctx.moveTo(anchoMax/2,0);
+		ctx.lineTo(anchoMax/2,alturaMax);
+		ctx.strokeStyle="#000";
+		ctx.stroke();
+		ctx.closePath();
+		
+		ctx.beginPath();
+		ctx.moveTo(anchoMax/2+150,alturaMax/2);
+		ctx.arc(alturaMax/2,anchoMax/2,150,0,2*Math.PI);
+		ctx.strokeStyle="#568";
 		ctx.stroke();
 		ctx.stroke();
 		ctx.closePath();
-	}
-	
-	if(document.getElementById("sen").checked){
-		ctx.beginPath();//seno
-		ctx.moveTo(anchoMax/2+coseno*150,alturaMax/2);
-		ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
-		ctx.strokeStyle="#150";
-		ctx.stroke();
-		ctx.stroke();
-		ctx.closePath();
-	}
-	
-	if(document.getElementById("cos").checked){
-		ctx.beginPath();//cose
-		ctx.moveTo(anchoMax/2,alturaMax/2);
-		ctx.lineTo(anchoMax/2+coseno*150,anchoMax/2);
-		ctx.strokeStyle="red";
-		ctx.stroke();
-		ctx.stroke();
-		ctx.closePath();
-	}
+		
+		if(document.getElementById("tan").checked){
+			ctx.beginPath();//tangente
+			ctx.moveTo(anchoMax/2,alturaMax/2);
+			ctx.lineTo(anchoMax/2+150,alturaMax/2-tangente*150);
+			ctx.lineTo(anchoMax/2+150,alturaMax/2);
+			ctx.strokeStyle="blue";
+			ctx.stroke();
+			ctx.stroke();
+			ctx.closePath();
+		}
+		
+		if(document.getElementById("sen").checked){
+			ctx.beginPath();//seno
+			ctx.moveTo(anchoMax/2+coseno*150,alturaMax/2);
+			ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
+			ctx.strokeStyle="#150";
+			ctx.stroke();
+			ctx.stroke();
+			ctx.closePath();
+		}
+		
+		if(document.getElementById("cos").checked){
+			ctx.beginPath();//cose
+			ctx.moveTo(anchoMax/2,alturaMax/2);
+			ctx.lineTo(anchoMax/2+coseno*150,anchoMax/2);
+			ctx.strokeStyle="red";
+			ctx.stroke();
+			ctx.stroke();
+			ctx.closePath();
+		}
 
-	ctx.beginPath();//angulo
-	ctx.moveTo(anchoMax/2,alturaMax/2);
-	ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
-	ctx.strokeStyle="#ffff00";
-	ctx.stroke();
-	ctx.stroke();
-	ctx.closePath();
+		ctx.beginPath();//angulo
+		ctx.moveTo(anchoMax/2,alturaMax/2);
+		ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
+		ctx.strokeStyle="#ffff00";
+		ctx.stroke();
+		ctx.stroke();
+		ctx.closePath();
+	}
 }
 
 
