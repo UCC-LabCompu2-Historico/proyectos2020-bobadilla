@@ -20,6 +20,7 @@ function CalculoIndex(){
 		var coseno =Math.cos(angulorad);
 		var tangente =Math.tan(angulorad);
 		var seno2=seno;//copia del valor de seno sin redondear, se utilizara para determinar cuando es posible calcular la tangente
+		var coseno2=coseno;
 		
 		coseno=Math.round(coseno*1000)/1000;
 		seno=Math.round(seno*1000)/1000;
@@ -36,8 +37,6 @@ function CalculoIndex(){
 		if(seno2!=1&&seno2!=-1){
 			document.getElementById("rtan").value=tangente;
 		}
-	
-	
 	
 		var canvas=document.getElementById("canvas");
 		var ctx=canvas.getContext("2d");
@@ -74,6 +73,24 @@ function CalculoIndex(){
 			ctx.lineTo(anchoMax/2+150,alturaMax/2-tangente*150);
 			ctx.lineTo(anchoMax/2+150,alturaMax/2);
 			ctx.strokeStyle="blue";
+			ctx.font="bold 17px arial";
+			if(seno2==1||seno2==-1){
+			}
+			else{
+				if(coseno2==1||coseno2==-1){
+				}
+				else{
+					if(tangente*75<180&&tangente*75>-180){
+						ctx.strokeText("tan",anchoMax/2+160,alturaMax/2-tangente*75);
+					}
+					if(tangente*75>=180){
+						ctx.strokeText("tan",anchoMax/2+160,alturaMax/2-180);
+					}
+					if(tangente*75<=-180){
+						ctx.strokeText("tan",anchoMax/2+160,alturaMax/2+180);
+					}
+				}
+			}
 			ctx.stroke();
 			ctx.stroke();
 			ctx.closePath();
@@ -81,9 +98,15 @@ function CalculoIndex(){
 		
 		if(document.getElementById("sen").checked){
 			ctx.beginPath();//seno
+			ctx.strokeStyle="#150";
+			ctx.font="bold 17px arial";
 			ctx.moveTo(anchoMax/2+coseno*150,alturaMax/2);
 			ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
-			ctx.strokeStyle="#150";
+			if(coseno2==1||coseno2==-1){
+			}
+			else{
+				ctx.strokeText("sen",anchoMax/2+coseno*150-45,alturaMax/2-seno*75+15);
+			}
 			ctx.stroke();
 			ctx.stroke();
 			ctx.closePath();
@@ -91,9 +114,15 @@ function CalculoIndex(){
 		
 		if(document.getElementById("cos").checked){
 			ctx.beginPath();//cose
+			ctx.strokeStyle="red";
+			ctx.font="bold 17px arial";
 			ctx.moveTo(anchoMax/2,alturaMax/2);
 			ctx.lineTo(anchoMax/2+coseno*150,anchoMax/2);
-			ctx.strokeStyle="red";
+			if(seno2==1||seno2==-1){
+			}
+			else{
+				ctx.strokeText("cos",anchoMax/2+coseno*75-15,alturaMax/2+20);
+			}
 			ctx.stroke();
 			ctx.stroke();
 			ctx.closePath();
@@ -155,15 +184,29 @@ function calcseno(){
 	var hipsen;
 	cosen=Number(document.getElementById("cosen").value);
 	hipsen=Number(document.getElementById("hipsen").value);
-	if(cosen>hipsen){//es imposible que el cateto sea mas grande que la hipotenusa
-		var imp="Imp"
-		document.getElementById("ressen").value=imp;//no se imprime nada en pantalla
+	
+	if(isNaN(cosen)||isNaN(hipsen)){
+		alert("Se Ingreso un Valor Invalido");
+		if(isNaN(cosen)){
+			document.getElementById("cosen").value="";
+		}
+		else{
+			document.getElementById("hipsen").value="";
+		}
 	}
+	
 	else{
-		seno=cosen/hipsen;
-		seno=Math.round(seno*10000)/10000;
-		document.getElementById("ressen").value=seno;
+		if(cosen>hipsen){//es imposible que el cateto sea mas grande que la hipotenusa
+			var imp="Imp"
+			document.getElementById("ressen").value=imp;//no se imprime nada en pantalla
+		}
+		else{
+			seno=cosen/hipsen;
+			seno=Math.round(seno*10000)/10000;
+			document.getElementById("ressen").value=seno;
+		}
 	}
+
 }
 
 
@@ -177,14 +220,27 @@ function calccoseno(){
 	var hipcos;
 	cacos=Number(document.getElementById("cacos").value);
 	hipcos=Number(document.getElementById("hipcos").value);
-	if(cacos>hipcos){//es imposible que el cateto sea mas grande que la hipotenusa
-		var imp="Imp"
-		document.getElementById("rescos").value=imp;//no se imprime nada en pantalla
+	
+	if(isNaN(cacos)||isNaN(hipcos)){
+		alert("Se Ingreso un Valor Invalido");
+		if(isNaN(cacos)){
+			document.getElementById("cacos").value="";
+		}
+		else{
+			document.getElementById("hipcos").value="";
+		}
 	}
+	
 	else{
-		coseno=cacos/hipcos;
-		coseno=Math.round(coseno*10000)/10000;
-		document.getElementById("rescos").value=coseno;
+		if(cacos>hipcos){//es imposible que el cateto sea mas grande que la hipotenusa
+			var imp="Imp"
+			document.getElementById("rescos").value=imp;//no se imprime nada en pantalla
+		}
+		else{
+			coseno=cacos/hipcos;
+			coseno=Math.round(coseno*10000)/10000;
+			document.getElementById("rescos").value=coseno;
+		}
 	}
 	
 }
@@ -200,15 +256,29 @@ function calctangente(){
 	var catan;
 	cotan=Number(document.getElementById("cotan").value);
 	catan=Number(document.getElementById("catan").value);
-	if(catan==0){//es imposible la division por 0
-		var imp="Imp"
-		document.getElementById("restan").value=imp;//no se imprime nada en pantalla
+	
+	if(isNaN(cotan)||isNaN(catan)){
+		alert("Se Ingreso un Valor Invalido");
+		if(isNaN(cotan)){
+			document.getElementById("cotan").value="";
+		}
+		else{
+			document.getElementById("catan").value="";
+		}
 	}
+	
 	else{
-		tangente=cotan/catan;
-		tangente=Math.round(tangente*10000)/10000;
-		document.getElementById("restan").value=tangente;
+		if(catan==0){//es imposible la division por 0
+			var imp="Imp"
+			document.getElementById("restan").value=imp;//no se imprime nada en pantalla
+		}
+		else{
+			tangente=cotan/catan;
+			tangente=Math.round(tangente*10000)/10000;
+			document.getElementById("restan").value=tangente;
+		}
 	}
+	
 	
 }
 
