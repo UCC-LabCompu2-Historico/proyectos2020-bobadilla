@@ -189,9 +189,11 @@ function calcseno(){
 		alert("Se Ingreso un Valor Invalido");
 		if(isNaN(cosen)){
 			document.getElementById("cosen").value="";
+			document.getElementById("ressen").value="";
 		}
 		else{
 			document.getElementById("hipsen").value="";
+			document.getElementById("ressen").value="";
 		}
 	}
 	
@@ -225,9 +227,11 @@ function calccoseno(){
 		alert("Se Ingreso un Valor Invalido");
 		if(isNaN(cacos)){
 			document.getElementById("cacos").value="";
+			document.getElementById("rescos").value="";
 		}
 		else{
 			document.getElementById("hipcos").value="";
+			document.getElementById("rescos").value="";
 		}
 	}
 	
@@ -261,9 +265,11 @@ function calctangente(){
 		alert("Se Ingreso un Valor Invalido");
 		if(isNaN(cotan)){
 			document.getElementById("cotan").value="";
+			document.getElementById("restan").value="";
 		}
 		else{
 			document.getElementById("catan").value="";
+			document.getElementById("restan").value="";
 		}
 	}
 	
