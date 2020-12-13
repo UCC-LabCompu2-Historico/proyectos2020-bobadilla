@@ -10,7 +10,7 @@
 	margin-right:auto;
 }
 
-#main{
+main{
 	margin-top:75px;
 	margin-bottom:5px;
 	padding-bottom:5px;
@@ -38,7 +38,6 @@ footer{
 	bottom:0px;
 	position: fixed;
 	background:#DC7633;
-	text-align:center;
 }
 
 .link{
@@ -60,12 +59,8 @@ footer{
 #canvas{
 	margin-left:auto; 
 	margin-right: 50px; 
-	display: block; 
+	display: block;
 	background:#FEF5E7;
-}
-
-#ecuaciones{
-	margin-left:10px;
 }
 
 #funcionesindex{
