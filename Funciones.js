@@ -15,6 +15,9 @@ function CalculoIndex(){
 		var canvas=document.getElementById("canvas");
 		canvas.width = canvas.width;
 		Cuadricula();
+		document.getElementById("rsen").value="";
+		document.getElementById("rcos").value="";
+		document.getElementById("rtan").value="";
 	}
 	
 	else{
