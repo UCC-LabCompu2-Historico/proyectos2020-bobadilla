@@ -19,23 +19,21 @@
 				<a href="pagina_teoria.html" target="_blank" id="teoriaindex" class="link">TEORIA</a></h1>
 			</header>
 			<main>
-				<section>
-					<p><label for="angulo" id="tangulo" class="texto">Ingrese el valor del angulo: </label><input class="texto" type="text" id="angulo" onchange="CalculoIndex()"></p>
-					<p>
-						<canvas id="canvas" width="400px" height="400px">tu navegador no puede mostrar este contenido</canvas>
-						<div id="resultados">
-							<p><label for="rsen" class="texto">Sen: </label><input class="texto" id="rsen" readonly></p>
-							<p><label for="rcos" class="texto">Cos: </label><input class="texto" id="rcos" readonly></p>
-							<p><label for="rtan" class="texto">Tan: </label><input class="texto" id="rtan" readonly></p>
-						</div>
-					</p>
-					<div id="funcionesindex">
-						<p><label class="funcion" for="sen">Sen</label><input type="checkbox" id="sen" value="sen" name="funcion" onclick="CalculoIndex()" checked>
-							/ <label class="funcion" for="cos">Cos</label><input type="checkbox" value="cos" id="cos" name="funcion" onclick="CalculoIndex()" checked>
-							/ <label class="funcion" for="tan">Tan</label><input type="checkbox" value="tan" id="tan" name="funcion" onclick="CalculoIndex()" checked>
-						</p>
+				<p><label for="angulo" id="tangulo" class="texto">Ingrese el valor del angulo: </label><input class="texto" type="text" id="angulo" onchange="CalculoIndex()"></p>
+				<p>
+					<canvas id="canvas" width="400px" height="400px">tu navegador no puede mostrar este contenido</canvas>
+					<div id="resultados">
+						<p><label for="rsen" class="texto">Sen: </label><input class="texto" id="rsen" readonly></p>
+						<p><label for="rcos" class="texto">Cos: </label><input class="texto" id="rcos" readonly></p>
+						<p><label for="rtan" class="texto">Tan: </label><input class="texto" id="rtan" readonly></p>
 					</div>
-				</section>
+				</p>
+				<div id="funcionesindex">
+					<p><label class="funcion" for="sen">Sen</label><input type="checkbox" id="sen" value="sen" name="funcion" onclick="CalculoIndex()" checked>
+						/ <label class="funcion" for="cos">Cos</label><input type="checkbox" value="cos" id="cos" name="funcion" onclick="CalculoIndex()" checked>
+						/ <label class="funcion" for="tan">Tan</label><input type="checkbox" value="tan" id="tan" name="funcion" onclick="CalculoIndex()" checked>
+					</p>
+				</div>
 			</main>
 			<footer>
 			</footer>

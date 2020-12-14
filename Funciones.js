@@ -12,6 +12,9 @@ function CalculoIndex(){
 		alert("Se Ingreso un Valor Invalido");
 		angulo="";
 		document.getElementById("angulo").value="";
+		var canvas=document.getElementById("canvas");
+		canvas.width = canvas.width;
+		Cuadricula();
 	}
 	
 	else{
@@ -45,27 +48,7 @@ function CalculoIndex(){
 		
 		canvas.width=canvas.width;
 		
-		ctx.beginPath();
-		ctx.moveTo(0,alturaMax/2);
-		ctx.lineTo(anchoMax,alturaMax/2);
-		ctx.strokeStyle="#000";
-		ctx.stroke();
-		ctx.closePath();
-		
-		ctx.beginPath();
-		ctx.moveTo(anchoMax/2,0);
-		ctx.lineTo(anchoMax/2,alturaMax);
-		ctx.strokeStyle="#000";
-		ctx.stroke();
-		ctx.closePath();
-		
-		ctx.beginPath();
-		ctx.moveTo(anchoMax/2+150,alturaMax/2);
-		ctx.arc(alturaMax/2,anchoMax/2,150,0,2*Math.PI);
-		ctx.strokeStyle="#568";
-		ctx.stroke();
-		ctx.stroke();
-		ctx.closePath();
+		Cuadricula();
 		
 		if(document.getElementById("tan").checked){
 			ctx.beginPath();//tangente
