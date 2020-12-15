@@ -1,8 +1,8 @@
 
 	/**
    * Variables globales
-   * color1 , color2 , color3, almacenan un color, utilizado para la animacion
-   * angulo, almacenan el valor del angulo cuando el usuario lo cambie
+   * @param color1 , color2 , color3, almacenan un color utilizado para la animacion
+   * @param angulo, almacena el valor del angulo una vez que el usuario lo ingresó
    */
 	
 	var color1 = "blue";
@@ -10,7 +10,18 @@
 	var color3 = "red";
 	var angulo = "";
 	
-	/**
+	
+   /**
+   * {Pagina index}inicio del setInterval para generar el cambio de colores
+   * @method inicioAnimacion()
+   * @param tiempo, define el tiempo en milisegundos que se emplea en la funcion setInterval
+   */
+   
+function inicioAnimacion(tiempo){
+	setInterval(CalculoIndex , tiempo);
+}
+
+/**
    * {Pagina index}Seteo del valor de la variable angulo
    * @method setAngulo()
    */
@@ -37,7 +48,6 @@ function CalculoIndex(){
 		document.getElementById("rsen").value="";
 		document.getElementById("rcos").value="";
 		document.getElementById("rtan").value="";
-		stop
 	}
 	
 	else{
@@ -227,7 +237,6 @@ function calcseno(){
 			document.getElementById("ressen").value=seno;
 		}
 	}
-
 }
 
 
@@ -264,8 +273,7 @@ function calccoseno(){
 			coseno=Math.round(coseno*10000)/10000;
 			document.getElementById("rescos").value=coseno;
 		}
-	}
-	
+	}	
 }
 
 
@@ -302,12 +310,5 @@ function calctangente(){
 			tangente=Math.round(tangente*10000)/10000;
 			document.getElementById("restan").value=tangente;
 		}
-	}
-	
-	
+	}	
 }
-
-
-
-
-
