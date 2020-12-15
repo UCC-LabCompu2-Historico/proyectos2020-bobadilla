@@ -11,29 +11,27 @@
 		<script type="text/javascript" src="Funciones.js"></script>
 	</head>
 	<body id="bodyindex" onload="Cuadricula()">
-		<div id="contenedorindex">
-			<header>
-				<img id="imagen1" src="imagenes/triangulo.png">
-				<h1 class="titulo">KUKΛO<a href="index.html" target="_blank" id="inicioindex" class="link">INICIO</a>
-				<a href="pagina_ecuaciones.html" target="_blank" id="ecuacionesindex" class="link">ECUACIONES</a>
-				<a href="pagina_teoria.html" target="_blank" id="teoriaindex" class="link">TEORIA</a></h1>
-			</header>
-			<main>
-				<p><label for="angulo" id="tangulo" class="texto">Ingrese el valor del angulo: </label><input class="texto" type="text" id="angulo" onchange="CalculoIndex()"></p>
-				<p>
-					<canvas id="canvas" width="400px" height="400px">tu navegador no puede mostrar este contenido</canvas>
-					<div id="resultados">
-						<p><label for="rsen" class="texto">Sen: </label><input class="texto" id="rsen" readonly></p>
-						<p><label for="rcos" class="texto">Cos: </label><input class="texto" id="rcos" readonly></p>
-						<p><label for="rtan" class="texto">Tan: </label><input class="texto" id="rtan" readonly></p>
-					</div>
-				</p>
-				<div id="funcionesindex">
-					<p><label class="funcion" for="sen">Sen</label><input type="checkbox" id="sen" value="sen" name="funcion" onclick="CalculoIndex()" checked>
-						/ <label class="funcion" for="cos">Cos</label><input type="checkbox" value="cos" id="cos" name="funcion" onclick="CalculoIndex()" checked>
-						/ <label class="funcion" for="tan">Tan</label><input type="checkbox" value="tan" id="tan" name="funcion" onclick="CalculoIndex()" checked>
-					</p>
+		<header>
+			<img id="imagen1" src="imagenes/triangulo.png">
+			<h1 class="titulo">KUKΛO<a href="index.html" target="_blank" id="inicioindex" class="link">INICIO</a>
+			<a href="pagina_ecuaciones.html" target="_blank" id="ecuacionesindex" class="link">ECUACIONES</a>
+			<a href="pagina_teoria.html" target="_blank" id="teoriaindex" class="link">TEORIA</a></h1>
+		</header>
+		<main>
+			<p><label for="angulo" id="tangulo" class="texto">Ingrese el valor del angulo: </label><input class="texto" type="text" id="angulo" onchange="setInterval(CalculoIndex , 250)"></p>
+			<p>
+				<canvas id="canvas" width="400px" height="400px">tu navegador no puede mostrar este contenido</canvas>
+				<div id="resultados">
+					<p><label for="rsen" class="texto">Sen: </label><input class="texto" id="rsen" readonly></p>
+					<p><label for="rcos" class="texto">Cos: </label><input class="texto" id="rcos" readonly></p>
+					<p><label for="rtan" class="texto">Tan: </label><input class="texto" id="rtan" readonly></p>
 				</div>
+			</p>
+			<div id="funcionesindex">
+				<p><label class="funcion" for="sen">Sen</label><input type="checkbox" id="sen" value="sen" name="funcion" onclick="CalculoIndex()" checked>
+					/ <label class="funcion" for="cos">Cos</label><input type="checkbox" value="cos" id="cos" name="funcion" onclick="CalculoIndex()" checked>
+					/ <label class="funcion" for="tan">Tan</label><input type="checkbox" value="tan" id="tan" name="funcion" onclick="CalculoIndex()" checked>
+				</p>
 			</main>
 			<footer>
 			</footer>

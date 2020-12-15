@@ -2,9 +2,12 @@
    * {Pagina index}Calculo y graficacion de las funciones
    * @method CalculoIndex()
    */
+	var color1 = "blue";
+	var color2 = "green";
+	var color3 = "red";
 
 function CalculoIndex(){
-	
+	var color;
 	var angulo;
 	angulo=document.getElementById("angulo").value;
 	
@@ -21,106 +24,121 @@ function CalculoIndex(){
 	}
 	
 	else{
-		var angulorad=(angulo*Math.PI)/180;
-		var seno =Math.sin(angulorad);
-		var coseno =Math.cos(angulorad);
-		var tangente =Math.tan(angulorad);
-		var seno2=seno;//copia del valor de seno sin redondear, se utilizara para determinar cuando es posible calcular la tangente
-		var coseno2=coseno;
-		
-		coseno=Math.round(coseno*1000)/1000;
-		seno=Math.round(seno*1000)/1000;
-		tangente=Math.round(tangente*1000)/1000;
-		
-		document.getElementById("rsen").value=seno;
-		document.getElementById("rcos").value=coseno;
-		
-		if(seno2==1||seno2==-1){
-			var tangente2="Ind";
-			document.getElementById("rtan").value=tangente2;
+		if (angulo == ""){
+			var canvas=document.getElementById("canvas");
+			canvas.width = canvas.width;
+			Cuadricula();
+			document.getElementById("rsen").value="";
+			document.getElementById("rcos").value="";
+			document.getElementById("rtan").value="";
 		}
-		
-		if(seno2!=1&&seno2!=-1){
-			document.getElementById("rtan").value=tangente;
-		}
-	
-		var canvas=document.getElementById("canvas");
-		var ctx=canvas.getContext("2d");
-		var alturaMax=canvas.height;
-		var anchoMax=canvas.width;
-		
-		canvas.width=canvas.width;
-		
-		Cuadricula();
-		
-		if(document.getElementById("tan").checked){
-			ctx.beginPath();//tangente
-			ctx.moveTo(anchoMax/2,alturaMax/2);
-			ctx.lineTo(anchoMax/2+150,alturaMax/2-tangente*150);
-			ctx.lineTo(anchoMax/2+150,alturaMax/2);
-			ctx.strokeStyle="blue";
-			ctx.font="bold 17px arial";
+		else{
+			var angulorad=(angulo*Math.PI)/180;
+			var seno =Math.sin(angulorad);
+			var coseno =Math.cos(angulorad);
+			var tangente =Math.tan(angulorad);
+			var seno2=seno;//copia del valor de seno sin redondear, se utilizara para determinar cuando es posible calcular la tangente
+			var coseno2=coseno;
+			
+			coseno=Math.round(coseno*1000)/1000;
+			seno=Math.round(seno*1000)/1000;
+			tangente=Math.round(tangente*1000)/1000;
+			
+			document.getElementById("rsen").value=seno;
+			document.getElementById("rcos").value=coseno;
+			
 			if(seno2==1||seno2==-1){
+				var tangente2="Ind";
+				document.getElementById("rtan").value=tangente2;
 			}
-			else{
+			
+			if(seno2!=1&&seno2!=-1){
+				document.getElementById("rtan").value=tangente;
+			}
+		
+			var canvas=document.getElementById("canvas");
+			var ctx=canvas.getContext("2d");
+			var alturaMax=canvas.height;
+			var anchoMax=canvas.width;
+			
+			canvas.width=canvas.width;
+			
+			Cuadricula();
+			
+			if(document.getElementById("tan").checked){
+				ctx.beginPath();//tangente
+				ctx.moveTo(anchoMax/2,alturaMax/2);
+				ctx.lineTo(anchoMax/2+150,alturaMax/2-tangente*150);
+				ctx.lineTo(anchoMax/2+150,alturaMax/2);
+				ctx.strokeStyle= color1;
+				ctx.font="bold 17px arial";
+				if(seno2==1||seno2==-1){
+				}
+				else{
+					if(coseno2==1||coseno2==-1){
+					}
+					else{
+						if(tangente*75<180&&tangente*75>-180){
+							ctx.strokeText("tan",anchoMax/2+160,alturaMax/2-tangente*75);
+						}
+						if(tangente*75>=180){
+							ctx.strokeText("tan",anchoMax/2+160,alturaMax/2-180);
+						}
+						if(tangente*75<=-180){
+							ctx.strokeText("tan",anchoMax/2+160,alturaMax/2+180);
+						}
+					}
+				}
+				ctx.stroke();
+				ctx.stroke();
+				ctx.closePath();
+			}
+			
+			if(document.getElementById("sen").checked){
+				ctx.beginPath();//seno
+				ctx.strokeStyle=color2;
+				ctx.font="bold 17px arial";
+				ctx.moveTo(anchoMax/2+coseno*150,alturaMax/2);
+				ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
 				if(coseno2==1||coseno2==-1){
 				}
 				else{
-					if(tangente*75<180&&tangente*75>-180){
-						ctx.strokeText("tan",anchoMax/2+160,alturaMax/2-tangente*75);
-					}
-					if(tangente*75>=180){
-						ctx.strokeText("tan",anchoMax/2+160,alturaMax/2-180);
-					}
-					if(tangente*75<=-180){
-						ctx.strokeText("tan",anchoMax/2+160,alturaMax/2+180);
-					}
+					ctx.strokeText("sen",anchoMax/2+coseno*150-45,alturaMax/2-seno*75+15);
 				}
+				ctx.stroke();
+				ctx.stroke();
+				ctx.closePath();
 			}
-			ctx.stroke();
-			ctx.stroke();
-			ctx.closePath();
-		}
-		
-		if(document.getElementById("sen").checked){
-			ctx.beginPath();//seno
-			ctx.strokeStyle="#150";
-			ctx.font="bold 17px arial";
-			ctx.moveTo(anchoMax/2+coseno*150,alturaMax/2);
-			ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
-			if(coseno2==1||coseno2==-1){
+			
+			if(document.getElementById("cos").checked){
+				ctx.beginPath();//cose
+				ctx.strokeStyle=color3;
+				ctx.font="bold 17px arial";
+				ctx.moveTo(anchoMax/2,alturaMax/2);
+				ctx.lineTo(anchoMax/2+coseno*150,anchoMax/2);
+				if(seno2==1||seno2==-1){
+				}
+				else{
+					ctx.strokeText("cos",anchoMax/2+coseno*75-15,alturaMax/2+20);
+				}
+				ctx.stroke();
+				ctx.stroke();
+				ctx.closePath();
 			}
-			else{
-				ctx.strokeText("sen",anchoMax/2+coseno*150-45,alturaMax/2-seno*75+15);
-			}
-			ctx.stroke();
-			ctx.stroke();
-			ctx.closePath();
-		}
-		
-		if(document.getElementById("cos").checked){
-			ctx.beginPath();//cose
-			ctx.strokeStyle="red";
-			ctx.font="bold 17px arial";
-			ctx.moveTo(anchoMax/2,alturaMax/2);
-			ctx.lineTo(anchoMax/2+coseno*150,anchoMax/2);
-			if(seno2==1||seno2==-1){
-			}
-			else{
-				ctx.strokeText("cos",anchoMax/2+coseno*75-15,alturaMax/2+20);
-			}
-			ctx.stroke();
-			ctx.stroke();
-			ctx.closePath();
-		}
 
-		ctx.beginPath();//angulo
-		ctx.moveTo(anchoMax/2,alturaMax/2);
-		ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
-		ctx.strokeStyle="#ffff00";
-		ctx.stroke();
-		ctx.stroke();
-		ctx.closePath();
+			ctx.beginPath();//angulo
+			ctx.moveTo(anchoMax/2,alturaMax/2);
+			ctx.lineTo(anchoMax/2+coseno*150,alturaMax/2-seno*150);
+			ctx.strokeStyle="#ffff00";
+			ctx.stroke();
+			ctx.stroke();
+			ctx.closePath();
+			
+			color = color1;  //cambiamos los colores de las variables para generar la animacion
+			color1 = color2;
+			color2 = color3;
+			color3 = color;
+		}
 	}
 }
 
