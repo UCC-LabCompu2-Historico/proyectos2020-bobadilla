@@ -1,32 +1,47 @@
-/**
-   * {Pagina index}Calculo y graficacion de las funciones
-   * @method CalculoIndex()
+
+	/**
+   * Variables globales
+   * color1 , color2 , color3, almacenan un color, utilizado para la animacion
+   * angulo, almacenan el valor del angulo cuando el usuario lo cambie
    */
+	
 	var color1 = "blue";
 	var color2 = "green";
 	var color3 = "red";
+	var angulo = "";
+	
+	/**
+   * {Pagina index}Seteo del valor de la variable angulo
+   * @method setAngulo()
+   */
+
+function setAngulo(){
+	angulo = document.getElementById("angulo").value;
+}
+	
+	/**
+   * {Pagina index}Calculo y graficacion de las funciones
+   * @method CalculoIndex()
+   */
 
 function CalculoIndex(){
 	var color;
-	var angulo;
-	
-	angulo=document.getElementById("angulo").value;
+	var canvas=document.getElementById("canvas");
 	
 	if(isNaN(angulo)){
 		alert("Se Ingreso un Valor Invalido");
-		angulo="";
 		document.getElementById("angulo").value="";
-		var canvas=document.getElementById("canvas");
+		angulo = "";
 		canvas.width = canvas.width;
 		Cuadricula();
 		document.getElementById("rsen").value="";
 		document.getElementById("rcos").value="";
 		document.getElementById("rtan").value="";
+		stop
 	}
 	
 	else{
 		if (angulo == ""){
-			var canvas=document.getElementById("canvas");
 			canvas.width = canvas.width;
 			Cuadricula();
 			document.getElementById("rsen").value="";
@@ -57,7 +72,6 @@ function CalculoIndex(){
 				document.getElementById("rtan").value=tangente;
 			}
 		
-			var canvas=document.getElementById("canvas");
 			var ctx=canvas.getContext("2d");
 			var alturaMax=canvas.height;
 			var anchoMax=canvas.width;
