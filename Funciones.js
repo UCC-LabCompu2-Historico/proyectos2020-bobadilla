@@ -9,6 +9,7 @@
 function CalculoIndex(){
 	var color;
 	var angulo;
+	
 	angulo=document.getElementById("angulo").value;
 	
 	if(isNaN(angulo)){
